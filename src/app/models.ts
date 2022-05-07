@@ -1,6 +1,7 @@
 export interface Game {
   background_image: string;
   name: string;
+  id: number;
   released: string;
   metacritic_url: string;
   website: string;
@@ -25,6 +26,7 @@ interface Genre {
 interface ParentPlatform {
   platform: {
     name: string;
+    slug: string;
   };
 }
 
