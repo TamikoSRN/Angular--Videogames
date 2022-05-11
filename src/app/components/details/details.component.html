@@ -2,18 +2,20 @@
   <div class="game-banner">
     <img
       class="game-banner-img"
-      src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_MeltyBloodTypeLumina_image1600w.jpg"
+      src="{{ game.background_image }}"
       alt="background image"
     />
   </div>
   <div class="game-content">
     <div class="details-wrapper">
       <div class="game-header">
-        <h1 class="game-header-title">Melty Blood Type Lumina</h1>
-        <h2 class="game-header-release-date">Release: 23.11.2021</h2>
+        <h1 class="game-header-title">{{ game.name }}</h1>
+        <h2 class="game-header-release-date">{{ game.released | date }}</h2>
         <p class="game-header-genres">
-          <span>Fight</span>
-        </p>
+          <span *ngFor="let genre of game.genres; let last = last">
+            {{ genre.name }}<span *ngIf="!last">, </span></span
+          >
+        </p> 
         <div class="game-gauge">
           <mwl-gauge
             class="two"
@@ -26,12 +28,7 @@
             [animationDuration]="2"
           >
           </mwl-gauge>
-          <a
-          class="game-gauge-label"
-          target="_blank"
-          href=""
-          >Metacritic</a
-          >
+          <a class="game-gauge-label" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
         </div>
       </div>
       <!-- here will go tabs -->
