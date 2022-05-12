@@ -1,4 +1,9 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,9 +21,9 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
         'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
       },
       setParams: {
-          key: '4c1dc1add2f448a19d9ee0e6a46c4b32'
-      }
+        key: '4c1dc1add2f448a19d9ee0e6a46c4b32',
+      },
     });
-    return next.handle(req)
+    return next.handle(req);
   }
 }

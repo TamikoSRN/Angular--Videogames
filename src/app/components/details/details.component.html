@@ -15,7 +15,7 @@
           <span *ngFor="let genre of game.genres; let last = last">
             {{ genre.name }}<span *ngIf="!last">, </span></span
           >
-        </p> 
+        </p>
         <div class="game-gauge">
           <mwl-gauge
             class="two"
@@ -28,7 +28,12 @@
             [animationDuration]="2"
           >
           </mwl-gauge>
-          <a class="game-gauge-label" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
+          <a
+            class="game-gauge-label"
+            target="_blank"
+            href="{{ game.metacritic_url }}"
+            >Metacritic</a
+          >
         </div>
       </div>
       <!-- here will go tabs -->
